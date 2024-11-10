@@ -1,23 +1,117 @@
-const images = document.querySelectorAll('.carousel-images img');
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
-let currentIndex = 0;
 
-function showImage(index) {
-    const offset = -index * 100; // Calcula a posição para mostrar a imagem atual
-    document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+let currentIndex = 0;
+const images = document.querySelectorAll(".carousel-image");
+const totalImages = images.length;
+
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalImages;
+    updateCarousel();
 }
 
-nextButton.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % images.length; // Avança para a próxima imagem
-    showImage(currentIndex);
-});
+// Função para mostrar a imagem anterior
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+    updateCarousel();
+}
 
-prevButton.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length; // Volta para a imagem anterior
-    showImage(currentIndex);
-});
+// Função para atualizar o carrossel
+function updateCarousel() {
+    const offset = -currentIndex * 100;
+    document.querySelector(".carousel").style.transform = `translateX(${offset}%)`;
+}
 
-showImage(currentIndex); // Mostra a primeira imagem no carregamento
+// Carrossel automático a cada 3 segundos
+setInterval(nextSlide, 3000);
 
 
+// Formulário: Não permitir números ou caracteres especiais no nome
+const caracteresPermitidosNome = [...'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', 'Backspace', 'ArrowLeft', 'ArrowRight', ' ']
+
+document.getElementById("nome").addEventListener("keydown", function(event)
+{
+	if (!caracteresPermitidosNome.includes(event.key))
+	{
+		event.preventDefault()
+	}
+})
+
+// Formulário: Não permitir letras ou caracteres especiais no telefone
+const caracteresPermitidosTelefone = [...'0123456789', '(', ')', 'Backspace', 'ArrowLeft', 'ArrowRight', ' ']
+	
+document.getElementById("telefone").addEventListener("keydown", function(event)
+{
+	if (!caracteresPermitidosTelefone.includes(event.key))
+	{
+		event.preventDefault()
+	}
+})
+// Formulário: Não permitir caracteres especiais no E-mail
+const caracteresPermitidosEmail = [...'0123456789', ...'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', 'Backspace', 'ArrowLeft', 'ArrowRight', '.', '@']
+
+document.getElementById("email").addEventListener("keydown", function(event)
+{
+	if (!caracteresPermitidosEmail.includes(event.key))
+	{
+		event.preventDefault()
+	}
+})
+
+// Função de validação para ver se os valores do input são válidos
+
+document.getElementById("enviar").addEventListener("click", function(event)
+{
+	document.getElementById("erro1").innerText = ""
+	document.getElementById("erro2").innerText = ""
+	document.getElementById("erro3").innerText = ""
+	document.getElementById("erro4").innerText = ""
+	document.getElementById("erro1").style.color = "red"
+	
+	// Formulário: Verifica se o nome é valido (se é grande o suficiente para ter nome e sobrenome) e apresenta mensagem de erro se não for
+	if (document.getElementById("nome").value.length < 5 && document.getElementById("nome").value.length > 0)
+	{
+		document.getElementById("erro1").innerText = "Nome muito curto. Por favor, insira seu nome e sobrenome"
+	}
+	
+	// Formulário: Verifica se telefone é válido (números o suficiente) e apresenta mensagem de erro se não for
+	if (document.getElementById("telefone").value.length < 11 && document.getElementById("telefone").value.length > 0)
+	{
+		document.getElementById("erro2").innerText = "Número de telefone inválido! Por favor, verifique se o número foi preenchido corretamente, incluindo o DDD"
+	}
+
+// Formulário: Verifica se e-mail é valido (contem @gmail.com ou outros dominios) e apresenta mensagem de erro se não for
+	email = document.getElementById("email").value
+	document.getElementById("erro3").innerText = ""
+	
+	if (!(email.endsWith("@gmail.com") && email.indexOf("@gmail.com") > 0) && !(email.endsWith("@yahoo.com") && email.indexOf("@yahoo.com") > 0) && !(email.endsWith("@soulasalle.com.br") && email.indexOf("@soulasalle.com.br") > 0) && !(email.endsWith("@lasalle.org.br") && email.indexOf("@lasalle.org.br") > 0) && email.length > 0)
+	{
+		document.getElementById("erro3").innerText = "E-mail inválido! Por favor, verifique se o e-mail foi preenchido corretamente, incluindo o domínio"
+	}
+	
+	/*if (document.getElementById("tipo_servico").value == "TipoServiço")
+	{
+		document.getElementById("erro4").innerText = "Por favor, selecione um Tipo de Serviço"
+	}*/
+
+// Formulário: Verifica se todas as informações foram preenchidas corretamente e apresenta mensagem de sucesso se for e previne o submit de mudar de página
+	if ((document.getElementById("nome").value.length > 4) && ((email.endsWith("@gmail.com") || email.endsWith("@yahoo.com") || email.endsWith("@soulasalle.com.br") || email.endsWith("@lasalle.org.br")) && email.length > 0 && document.getElementById("telefone").value.length > 10))
+	{
+		event.preventDefault()
+		document.getElementById("erro1").innerText = "Enviado com sucesso! Em breve estaremos entrando em contato de volta por E-mail e WhatsApp"
+		document.getElementById("erro1").style.color = "green"
+		document.getElementById("erro2").innerText = ""
+		document.getElementById("erro3").innerText = ""
+		document.getElementById("erro4").innerText = ""
+		
+		if (document.getElementById("tipo_servico").value == "TipoServiço")
+		{
+			document.getElementById("erro1").innerText = "Por favor, selecione um Tipo de Serviço"
+			document.getElementById("erro1").style.color = "red"
+		}
+	}
+	// Formulário: Previne o botão submit de mudar de página se todas opções forem preenchidas, mesmo se estiverem incorretas, sem que remova a caixa de "Preencha os dados". Tive muita luta pra conseguir resolver pois as vezes não funcionava por causa de alguma opção etc... Graças a Deus depois de muitas tentativas, funciona!
+	else if ((document.getElementById("nome").value.length > 0 && document.getElementById("nome").value.length < 4) && (email.endsWith("@gmail.com") || email.endsWith("@yahoo.com") || email.endsWith("@soulasalle.com.br") || email.endsWith("@lasalle.org.br")) && (document.getElementById("telefone").value.length < 11) || (document.getElementById("tipo_servico").value != "TipoServiço"))
+	{
+		event.preventDefault()
+	}
+})

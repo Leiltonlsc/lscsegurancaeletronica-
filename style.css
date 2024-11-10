@@ -58,12 +58,11 @@ section {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Define duas colunas com o mesmo tamanho */
-    gap: 20px; /* Espaçamento entre as áreas */
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
 }
 
 .foto .textosobre{
-    /*background-color: #f0f0f0;*/
     padding: 20px;
     border: 1px solid #ddd;
 }
@@ -80,8 +79,8 @@ section {
     gap: 10px; 
     max-width:600pc
     margin: 0 auto;
-    grid-template-columns: repeat(3, 450px); /* 3 colunas com largura fixa de 450px */
-      grid-auto-rows: 300px; /* Altura fixa de 300px para cada linha */
+    grid-template-columns: repeat(3, 450px); 
+      grid-auto-rows: 300px; 
     justify-content: center;
    
     
@@ -95,9 +94,9 @@ section {
 
   .servico-item img {
     
-    width: 350px; /* Largura fixa */
-    height: 200px; /* Altura fixa */
-    object-fit: cover; /* Corta a imagem para preencher o espaço */
+    width: 350px; 
+    height: 200px; 
+    object-fit: cover; 
     border-radius: 5px;
     margin-bottom: 10px;
     aspect-ratio: 3/2;
@@ -110,8 +109,8 @@ section {
     gap: 10px; 
     max-width:600pc
     margin: 0 auto;
-    grid-template-columns: repeat(3, 400px); /* 3 colunas com largura fixa de 450px */
-    grid-auto-rows: 260px; /* Altura fixa de 300px para cada linha */
+    grid-template-columns: repeat(3, 400px); 
+    grid-auto-rows: 260px; 
     justify-content: center;
    
 
@@ -119,20 +118,19 @@ section {
   .cliente {
     background-color: #f3f3f3;
     border: 1px solid #ddd;
-    padding: 10px; /* Ajuste de padding */
+    padding: 10px; 
     border-radius: 8px;
-    /*display: flex;*/
-    justify-content: center;
+       justify-content: center;
     align-items: center;
-    overflow: hidden; /* Evita que o conteúdo saia dos limites */
+    overflow: hidden; 
 }
 
 .cliente img {
-    width: 330px; /* Largura fixa */
-    height: 200px; /* Altura fixa */
-    object-fit: cover; /* Ajusta a imagem para cobrir o espaço, cortando se necessário */
+    width: 330px; 
+    height: 200px; 
+    object-fit: cover; 
     border-radius: 5px;
-    margin-bottom: 10px; /* Espaço entre a imagem e o conteúdo abaixo */
+    margin-bottom: 10px; 
     justify-content: center;
 }
 .nome-cliente {
@@ -206,16 +204,15 @@ section {
   }
   
   .redes-sociais a {
-    font-size: 24px; /* Tamanho do ícone */
-    text-decoration: none; /* Remove o sublinhado */
-    color: #333; /* Cor dos ícones */
+    font-size: 24px; 
+    text-decoration: none; 
+    color: #333; /
     display: flex;
     align-items: center;
-    gap: 5px; /* Espaçamento entre o ícone e o texto */
+    gap: 5px; 
   }
   
-  .redes-sociais a:hover {
-    color: #0077b5; /* Muda a cor do ícone quando o mouse passa por cima */
+  .redes-sociais a:hover { /* Muda a cor do ícone quando o mouse passa por cima */
   }
   
   /* Estilo de hover para cada rede social */
@@ -224,7 +221,7 @@ section {
   }
   
   .redes-sociais i {
-    font-size: 30px; /* Aumenta o tamanho do ícone */
+    font-size: 30px; 
   }
   
 /****************botão do whatsapp******************************/
@@ -234,13 +231,13 @@ section {
     right: 30px; 
     
    
-    border-radius: 50%; /* Faz o botão ficar redondo */
-    padding: 15px; /* Tamanho do botão */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar um efeito de elevação */
+    border-radius: 50%; 
+    padding: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     font-size: 4px; 
     text-align: center; 
     transition: all 0.5s ease;
-    z-index: 9999; /* Garante que o botão fique por cima de outros elementos */
+    z-index: 9999; 
   }
   
   
@@ -259,7 +256,7 @@ section {
   
   .whatsapp-btn:hover {
     /*background-color: #128C7E;*/
-    transform: scale(2.2);
+    transform: scale(1.3);
   }
   
   .whatsapp-btn img {
@@ -267,3 +264,114 @@ section {
     height: 50px;
   }
   
+  #erros
+  {
+	 color: #FF0000;
+  }
+  
+  input
+  {
+	text-align: center;  
+  }
+  
+
+  /********************carrossel***************************/
+  /* Estilo do contêiner do carrossel */
+.carousel-container {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Estilo das imagens do carrossel */
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+  min-width: 100%;
+  height: auto;
+}
+
+/* Botões de navegação */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+
+
+/*******************************//* Ajustes para telas médias (tablets) */
+@media (max-width: 768px) {
+  nav a {
+      padding: 10px;
+      font-size: 14px;
+  }
+
+  .container, .mapaeformulario {
+      grid-template-columns: 1fr; /* Coluna única em tablets */
+  }
+
+  .carousel-container, .grid-servicos, .grid-depoimento {
+      grid-template-columns: 1fr; /* Ajuste de colunas para tablets */
+  }
+
+  .servico-item img, .cliente img {
+      width: 100%;
+      height: auto;
+  }
+}
+
+/* Ajustes para telas pequenas (smartphones) */
+@media (max-width: 480px) {
+  nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .carousel-container {
+      width: 100%;
+  }
+
+  .textosobre {
+      padding: 10px;
+      font-size: 14px;
+  }
+
+  .grid-servicos, .grid-depoimento {
+      grid-template-columns: 1fr; /* Coluna única em dispositivos móveis */
+  }
+
+  .servico-item, .cliente {
+      padding: 15px;
+      font-size: 14px;
+  }
+
+  .whatsapp-btn {
+      bottom: 20px;
+      right: 20px;
+  }
+
+  footer {
+      font-size: 14px;
+  }
+}
+

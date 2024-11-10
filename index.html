@@ -47,8 +47,8 @@
                 <img src="imagem/imgsobre.jpg" alt="Imagem" class="imgsobre">
             </div>
             <div class="textosobre">
-                <h3>Segurança Eletrônica: Tranquilidade ao Alcance de um Clique</h3>
-                <pp style="padding-left: 50px;"> Na LSC, entendemos que segurança é
+                <h3><center>Segurança Eletrônica: Tranquilidade ao Alcance de um Clique</center></h3>
+                <!--<p style="padding-left: 50px;">--><p align="justify"> Na LSC, entendemos que segurança é
                     mais do que um serviço é uma prioridade para proteger o que você
                     valoriza. Com soluções personalizadas e tecnologias de ponta, oferecemos
                     sistemas de segurança eletrônica para residências e empresas,
@@ -58,7 +58,7 @@
                     tenha controle total sobre o seu patrimônio, onde quer que esteja.</p>
                     <br>
 
-                    <pp style="padding-left: 50px;"> Confie na LSC para proteger o que é mais importante.
+                    <!--<p style="padding-left: 50px;">--> <p align="justify"> Confie na LSC para proteger o que é mais importante.
                         Sua segurança é a nossa missão, e nossa tecnologia está sempre a um
                         clique de distância para oferecer a tranquilidade que você merece.</p>
             </div>
@@ -100,7 +100,7 @@
         </div>
         <!-- Grid com do depoimento -->
         <br><br><br><br>
-        <H2>Depoimento dos Clientes </H2>
+        <H2>Depoimento dos Nossos Clientes </H2>
         <div class="grid-depoimento">
             <div class="cliente">
                 <img src="imagem/imgcliente1.jpg" alt="Cliente 1">
@@ -118,13 +118,13 @@
     <!-------------------------- Menu de navegação ---------------------------------->
     <section id="contato">
 
-        <h2>Contato</h2>
-
+        <center><h2>Contato</h2>
+        <p>Entre em contato com a gente!</p></center>
         <section class="mapaeformulario">
 
             <!--<h2>mapa </h2>-->
             <div class="minhalocalidade">
-                <p>Minha Localidade</p>
+                <p>Nossa Localidade</p>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.1838558104314!2d-43.10952269999999!3d-22.906588499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9983e39946000f%3A0xad1427082e986090!2sCondom%C3%ADnio%20do%20Edif%C3%ADcio%20Ot%C3%A1vio%20Carneiro%20100%20-%20Icara%C3%AD%2C%20Niter%C3%B3i%20-%20RJ%2C%2024220-000!5e0!3m2!1spt-BR!2sbr!4v1731212862734!5m2!1spt-BR!2sbr"
                     width="auto" height="450" style="border:0;" allowfullscreen="" loading="lazy"
@@ -135,31 +135,37 @@
                 <p>Entre em Contato</p>
                 <div class="formulario">
                     <!--<h2>Entre em Contato</h2>-->
-                    <form action="processar_formulario.php" method="POST">
-                        <label for="nome">Nome:</label><br>
-                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome"><br>
-
+                    <form>
+                        <label for="nome">Nome Completo:</label><br>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required maxlength="50"><br>
+						<p>
                         <label for="tel">Telefone:</label><br>
-                        <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone"><br>
-
+                        <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone" required maxlength="16"> <br>
+						</p>
+						<p>
                         <label for="email">E-mail:</label><br>
-                        <input type="email" id="email" name="email" placeholder="Digite seu Email"><br>
-
-
+                        <input type="email" id="email" name="email" placeholder="Digite seu Email" required maxlength="256"><br>
+						</p>
+						<p>
                         <label for="tipo_servico">Tipo de Serviço:</label><br>
-                        <select id="tipo_servico" name="tipo_servico" required="">
-                            <option value="">Selecione o tipo de serviço</option>
+                        <select id="tipo_servico" name="tipo_servico" required />
+                            <option value="TipoServiço" disabled selected >Selecione o tipo de serviço</option>
                             <option value="Manutenção">Manutenção</option>
                             <option value="Instalação">Instalação</option>
                             <option value="Reparação">Reparação</option>
-                            <option value="Outro">Outro</option>
+                            <option value="Outro" required>Outro</option>
                         </select><br>
-
+						</p>
                         <label for="descricao">Descrição do Serviço:</label><br>
                         <textarea name="Mensagem" cols="30" rows="10"
-                            placeholder="Digite sua Mensagem"></textarea><br><br>
+                            placeholder="Digite sua mensagem"></textarea><br><br>
 
-                        <input type="submit" value="Enviar" <a="" href="obrigado.html">
+                        <button type="submit" id="enviar">Enviar</button> <!--<a="" href="obrigado.html">-->
+						<div id="erros">
+						<p id='erro1'></p>
+						<p id='erro2'></p>
+						<p id='erro3'></p>
+						<p id='erro4'></p></div>
 
                     </form>
                 </div>
@@ -175,11 +181,11 @@
     <footer>
         <div class="container1">
             <ul>
-                <h3>&copy;2024 - Todos os direitos reservados por Lsc - Soluções em Segurança Eletronica</h3>
-                <p></p>
-                Otavio Caneiro n° 100 - NIteroi - Tel.: (xx) xxxxx-xxxx <br>
+                <h3><center>&copy; 2024 - Todos os direitos reservados por Lsc - Soluções em Segurança Eletronica</h3></center>
+                <p></p><center>
+                Otavio Caneiro n° 100 - Niteroi - Tel.: (xx) xxxxx-xxxx <br>
                 CNPJ: xx.xxx.xxx/0001-00 <br>
-                Horário de Atendimento: 24 horas.</p>
+                Horário de Atendimento: 24 horas.</center></p>
 
                 <div class="redes-sociais">
                     <a href="https://facebook.com" target="_blank">

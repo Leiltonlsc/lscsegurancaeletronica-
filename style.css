@@ -31,6 +31,7 @@ nav a:hover {
 	animation: corBotao 0.6s forwards;
 }
 
+
 @keyframes corBotao
 {
       0% 
@@ -41,6 +42,16 @@ nav a:hover {
 	  {
         background-color: #323232;
       }
+}
+
+#facebook, #instagram, #x, #linkedin
+{
+	transition: transform 0.2s ease;
+}
+
+#facebook:hover, #instagram:hover, #x:hover, #linkedin:hover
+{
+    transform: scale(1.2);	
 }
 
 /* Estilo para as seções */

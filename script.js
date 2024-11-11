@@ -132,8 +132,7 @@ document.querySelector("nav").addEventListener("click", function(event)
         
         if (pagina) 
 		{
-            pagina.scrollIntoView
-			({
+            pagina.scrollIntoView({
                 behavior: 'smooth'
             })
         }

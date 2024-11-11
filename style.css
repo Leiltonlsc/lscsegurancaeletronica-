@@ -3,7 +3,7 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-     background-color: #575757;
+     background-color: #5F5F5F;
 }
 
 nav a {
@@ -52,6 +52,27 @@ nav a:hover {
 #facebook:hover, #instagram:hover, #x:hover, #linkedin:hover
 {
     transform: scale(1.2);	
+}
+
+#waze:hover
+{
+	cursor:pointer;
+}
+
+#enviar
+{
+	cursor:pointer;
+}
+
+.carousel-text {
+    position: absolute;
+    bottom: 10px; /* Ajuste conforme necessário */
+    left: 20px;   /* Ajuste conforme necessário */
+    color: white; /* Cor do texto */
+    font-size: 24px; /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte */
+    background: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    padding: 5px 10px; /* Espaçamento ao redor do texto */
 }
 
 /* Estilo para as seções */

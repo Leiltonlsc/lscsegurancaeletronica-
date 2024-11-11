@@ -4,9 +4,9 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Lsc - Segurança Eletronica</title>
+    <title>Lsc - Soluções em Segurança Eletronica</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="icon" href="imagem/lsc - logo.png" type="image/x-icon">
+    <link rel="icon" href="imagem/logoLSC.png" type="image/x-icon">
     <link rel='stylesheet' type='text/css' media='screen' href='style.css' href="carrossel.css">
     <style>
         /* Definindo a altura e a largura do mapa */
@@ -142,11 +142,11 @@
                 <p>Entre em Contato</p>
                 <div class="formulario">
                     <!--<h2>Entre em Contato</h2>-->
-                    <form">
+                    <form>
                         <label for="nome">Nome Completo:</label><br>
                         <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required maxlength="50"><br>
 						<p>
-                        <label for="tel">Telefone:</label><br>
+                        <label for="telefone">Telefone:</label><br>
                         <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone" required maxlength="16"> <br>
 						</p>
 						<p>
@@ -155,19 +155,19 @@
 						</p>
 						<p>
                         <label for="tipo_servico">Tipo de Serviço:</label><br>
-                        <select id="tipo_servico" name="tipo_servico" required />
+                        <select id="tipo_servico" name="tipo_servico" />
                             <option value="TipoServiço" disabled selected >Selecione o tipo de serviço</option>
                             <option value="Manutenção">Manutenção</option>
                             <option value="Instalação">Instalação</option>
                             <option value="Reparação">Reparação</option>
-                            <option value="Outro" required>Outro</option>
+                            <option value="Outro">Outro</option>
                         </select><br>
 						</p>
                         <label for="descricao">Descrição do Serviço:</label><br>
                         <textarea name="Mensagem" cols="30" rows="10"
                             placeholder="Digite sua mensagem"></textarea><br><br>
-
-                        <button type="submit" id="enviar">Enviar</button> <!--<a="" href="obrigado.html">-->
+							
+                        <button id="enviar" type="submit" >Enviar</button>
 						<div id="erros">
 						<p id='erro1'></p>
 						<p id='erro2'></p>
@@ -195,18 +195,22 @@
                 Horário de Atendimento: 24 horas (WhatsApp).</center></p>
 
                 <div class="redes-sociais">
+					<div id="facebook">
                     <a href="https://facebook.com" target="_blank">
-                        <img src="imagem/facebook.png" width="40" height="40" alt="Facebook">
-                    </a>
+                        <img src="imagem/facebook.png" width="50" height="50" alt="Facebook">
+                    </a></div>
+					<div id="x">
                     <a href="https://x.com" target="_blank">
                         <img src="imagem/x.png" width="50" height="50" alt="X">
-                    </a>
+                    </a></div>
+					<div id="instagram">
                     <a href="https://instagram.com" target="_blank">
-                        <img src="imagem/instagram.png" width="45" height="45" alt="Instagram">
-                    </a>
+                        <img src="imagem/instagram.png" width="52" height="52" alt="Instagram">
+                    </a></div>
+					<div id="linkedin">
                     <a href="https://br.linkedin.com/" target="_blank">
-                        <img src="imagem/linkedin.png" width="55" height="55" alt="Linkedin">
-                    </a>
+                        <img src="imagem/linkedin.png" width="50" height="50" alt="Linkedin">
+                    </a></div>
                 </div>
 
         </div>

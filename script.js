@@ -58,7 +58,6 @@ document.getElementById("email").addEventListener("keydown", function(event)
 })
 
 // Função de validação para ver se os valores do input são válidos
-
 document.getElementById("enviar").addEventListener("click", function(event)
 {
 	document.getElementById("erro1").innerText = ""
@@ -87,11 +86,6 @@ document.getElementById("enviar").addEventListener("click", function(event)
 	{
 		document.getElementById("erro3").innerText = "E-mail inválido! Por favor, verifique se o e-mail foi preenchido corretamente, incluindo o domínio"
 	}
-	
-	/*if (document.getElementById("tipo_servico").value == "TipoServiço")
-	{
-		document.getElementById("erro4").innerText = "Por favor, selecione um Tipo de Serviço"
-	}*/
 
 // Formulário: Verifica se todas as informações foram preenchidas corretamente e apresenta mensagem de sucesso se for e previne o submit de mudar de página
 	if ((document.getElementById("nome").value.length > 4) && ((email.endsWith("@gmail.com") || email.endsWith("@yahoo.com") || email.endsWith("@soulasalle.com.br") || email.endsWith("@lasalle.org.br")) && email.length > 0 && document.getElementById("telefone").value.length > 10))
@@ -114,4 +108,35 @@ document.getElementById("enviar").addEventListener("click", function(event)
 	{
 		event.preventDefault()
 	}
+})
+
+// Mapa: Ao clicar no botão "Acessar via Waze (GPS)", abre um alerta perguntando se o usuário deseja abrir o link, e se clicar OK, abre
+document.getElementById("waze").addEventListener("click", function(event)
+{
+	resposta = window.confirm("Deseja acessar o local via aplicativo Waze (GPS)? Uma nova aba será aberta");
+	
+	if (resposta)
+	{
+		window.open('https://www.waze.com/pt-PT/live-map/meeting?token=15D6-610iazvn7nfmw-sd&locale=pt_BR&env=row&utm_campaign=share_drive&utm_source=waze_app&utm_medium=undefined', '_blank')
+	}
+})
+
+// Navegação: Scroll suave
+
+document.querySelector("nav").addEventListener("click", function(event) 
+{
+    event.preventDefault();
+
+    if (event.target.tagName === 'A') 
+	{
+		href = event.target.getAttribute('href');
+		pagina = document.querySelector(href);
+        
+        if (pagina) 
+		{
+            pagina.scrollIntoView({
+                behavior: 'smooth'
+            })
+        }
+    }
 })

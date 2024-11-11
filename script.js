@@ -21,8 +21,8 @@ function updateCarousel() {
     document.querySelector(".carousel").style.transform = `translateX(${offset}%)`;
 }
 
-// Carrossel automático a cada 3 segundos
-setInterval(nextSlide, 3000);
+// Carrossel automático a cada 5 segundos
+setInterval(nextSlide, 5000);
 
 
 // Formulário: Não permitir números ou caracteres especiais no nome
@@ -138,4 +138,19 @@ document.querySelector("nav").addEventListener("click", function(event)
             })
         }
     }
+})
+
+// Imagem do Waze: Easter egg! Aperte L no teclado e mude a imagem para "Visite Leilton"...
+document.addEventListener("keydown", function(event)
+{
+	if (event.key == "l")
+	{
+		document.getElementById("waze").src = "imagem/LEILTON.png"
+	}
+})
+
+// Imagem do Waze: Easter egg! Solte L no teclado e volte a imagem ao normal "Visite nosso local"...
+document.addEventListener("keyup", function(event)
+{
+	document.getElementById("waze").src = "imagem/waze.png"
 })

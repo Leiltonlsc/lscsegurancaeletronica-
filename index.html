@@ -16,21 +16,20 @@
 
 <body>
     <div class="container">
-        <img src="imagem/logo-removebg-preview.png" alt="Imagem" class="imagem">
+        <img src="imagem/logo-removebg-preview.png" alt="Imagem" class="imagem">,    
+		<div class="menu_nav">
+		<nav>
+        <!--<a href="#inicio">Início</a>-->
+        <a href="#sobre">Sobre</a>
+        <a href="#servico">Serviços</a>
+        <a href="#contato">Contato</a>
+    </nav></div>
 
 
     </div>
     <!-- Menu de navegação -->
-
-    <nav>
-        <a href="#inicio">Início</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#servico">Serviços</a>
-        <a href="#contato">Contato</a>
-    </nav>
     <!-- pagina inicial -->
-    
-                  <div class="carousel">
+                <div class="carousel">
                 <img src="imagem/foto carrossel 1_resized.jpg" alt="Imagem 1" class="carousel-image">
                 <img src="imagem/foto carrossel 2_resized.jpg" alt="Imagem 2" class="carousel-image">
                 <img src="imagem/foto carrossel 3_resized.jpg" alt="Imagem 3" class="carousel-image">
@@ -41,7 +40,8 @@
         </div>
     <!-- pagina sobre -->
     <section id="sobre">
-        <h2>Sobre</h2>
+        <center><h2>Sobre</h2>
+		Sobre nossa empresa</center>
         <div class="container">
             <div class="foto">
                 <img src="imagem/imgsobre.jpg" alt="Imagem" class="imgsobre">
@@ -68,39 +68,45 @@
     <!-- pagina serviço -->
     <section id="servico">
         <h2>Serviços</h2>
-        <p>Veja os serviços que oferecemos.</p>
+        <p>Veja os serviços que oferecemos</p>
 
         <!-- Grid com do serviço -->
         <div class="grid-servicos">
-
             <div class="servico-item">
+			<div class="servico_img_txt">
                 <img src="imagem/Instalação de Câmera de Segurança.jpeg" alt="Instalação de Sistemas de CFTV">
                 Instalação de Sistemas de CFTV</p>
-            </div>
+            </div></div>
             <div class="servico-item">
-                <img src="imagem/alarme de segurança.jpeg" alt="Alarmes de Segurança">
+			<div class="servico_img_txt">
+            <img src="imagem/alarme de segurança.jpeg" alt="Alarmes de Segurança">
                 Alarmes de Segurança</p>
-            </div>
+            </div></div>         		
+            <div class="servico-item">	
+			<div class="servico_img_txt">				
+			<img src="imagem/Controle de acesso físico.jpeg" alt="Controle de Acesso">
+                Controle de Acesso
+            </div></div>
             <div class="servico-item">
-                <img src="imagem/Controle de acesso físico.jpeg" alt="Controle de Acesso">
-                Controle de Acesso:
-            </div>
-            <div class="servico-item">
+			<div class="servico_img_txt">
                 <img src="imagem/Monitoramento 24 horas.jpeg" alt=" Monitoramento 24 Horas">
-                Monitoramento 24 Horas:
-            </div>
+                Monitoramento 24 Horas
+            </div></div>
             <div class="servico-item">
+			<div class="servico_img_txt">
                 <img src="imagem/automação.jpeg" alt="Automação Residencial e Empresaria">
                 Automação Residencial e Empresaria
-            </div>
+            </div></div>
             <div class="servico-item">
-                <img src="imagem/Consultoria em Segurança.jpeg" alt="Consultoria em Segurança">
-                Consultoria em Segurança
+			<div class="servico_img_txt">
+			<img src="imagem/Consultoria em Segurança.jpeg" alt="Consultoria em Segurança">
+                Consultoria em Segurança</div>
             </div>
         </div>
         <!-- Grid com do depoimento -->
         <br><br><br><br>
-        <H2>Depoimento dos Nossos Clientes </H2>
+        <H2>Depoimento dos Nossos Clientes</H2>Veja o que nossos clientes acham dos nossos serviços
+		<br><br>
         <div class="grid-depoimento">
             <div class="cliente">
                 <img src="imagem/imgcliente1.jpg" alt="Cliente 1">
@@ -129,13 +135,14 @@
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.1838558104314!2d-43.10952269999999!3d-22.906588499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9983e39946000f%3A0xad1427082e986090!2sCondom%C3%ADnio%20do%20Edif%C3%ADcio%20Ot%C3%A1vio%20Carneiro%20100%20-%20Icara%C3%AD%2C%20Niter%C3%B3i%20-%20RJ%2C%2024220-000!5e0!3m2!1spt-BR!2sbr!4v1731212862734!5m2!1spt-BR!2sbr"
                     width="auto" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+					<p>Otavio Caneiro n° 100 - Niteroi - Tel.: (xx) xxxxx-xxxx</p>
+					<button id="waze">Acessar o local via Waze (GPS)</button>
             </div>
             <div class="form">
                 <p>Entre em Contato</p>
                 <div class="formulario">
                     <!--<h2>Entre em Contato</h2>-->
-                    <form>
+                    <form">
                         <label for="nome">Nome Completo:</label><br>
                         <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required maxlength="50"><br>
 						<p>
@@ -185,20 +192,20 @@
                 <p></p><center>
                 Otavio Caneiro n° 100 - Niteroi - Tel.: (xx) xxxxx-xxxx <br>
                 CNPJ: xx.xxx.xxx/0001-00 <br>
-                Horário de Atendimento: 24 horas.</center></p>
+                Horário de Atendimento: 24 horas (WhatsApp).</center></p>
 
                 <div class="redes-sociais">
                     <a href="https://facebook.com" target="_blank">
-                        <i class="fab fa-facebook"></i> Facebook
+                        <img src="imagem/facebook.png" width="40" height="40" alt="Facebook">
                     </a>
                     <a href="https://x.com" target="_blank">
-                        <i class="fab fa-twitter"></i> Twitter
+                        <img src="imagem/x.png" width="50" height="50" alt="X">
                     </a>
                     <a href="https://instagram.com" target="_blank">
-                        <i class="fab fa-instagram"></i> Instagram
+                        <img src="imagem/instagram.png" width="45" height="45" alt="Instagram">
                     </a>
                     <a href="https://br.linkedin.com/" target="_blank">
-                        <i class="fab fa-linkedin"></i> LinkedIn
+                        <img src="imagem/linkedin.png" width="55" height="55" alt="Linkedin">
                     </a>
                 </div>
 

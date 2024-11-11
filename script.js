@@ -110,34 +110,21 @@ document.getElementById("enviar").addEventListener("click", function(event)
 	}
 })
 
-// Mapa: Ao clicar no botão "Acessar via Waze (GPS)", abre um alerta perguntando se o usuário deseja abrir o link, e se clicar OK, abre
-document.getElementById("waze").addEventListener("click", function(event)
-{
-	
-	if (window.confirm("Deseja acessar o local via aplicativo Waze (GPS)? Uma nova aba será aberta"))
-	{
-		window.open('https://www.waze.com/pt-PT/live-map/meeting?token=15D6-610iazvn7nfmw-sd&locale=pt_BR&env=row&utm_campaign=share_drive&utm_source=waze_app&utm_medium=undefined', '_blank')
-	}
-})
+// Mapa: Ao clicar no botão "Acessar via Waze (GPS)", abre um alerta perguntando se o usuário deseja abrir o link, e se clicar OK, abre / ATUALIZADO EM ULTIMA HORA POR CAUSA DE UM BUG, IGNORE ;
+document.querySelector("nav").addEventListener("click", function(event) {
+    event.preventDefault();
 
-// Navegação: Scroll suave para "parte da página"
-document.querySelector("nav").addEventListener("click", function(event) 
-{
-    event.preventDefault()
+    if (event.target.tagName === 'A') {
+        const href = event.target.getAttribute('href');
+        const pagina = document.querySelector(href);
 
-    if (event.target.tagName === 'A') 
-	{
-        href = event.target.getAttribute('href')
-        pagina = document.querySelector(href)
-        
-        if (pagina) 
-		{
-		pagina.scrollIntoView({
-    		behavior: 'smooth'
-		});
+        if (pagina) {
+            pagina.scrollIntoView({
+                behavior: 'smooth'
+            });
         }
     }
-})
+});
 
 // Imagem do Waze: Easter egg! Aperte L no teclado e mude a imagem para "Visite Leilton"...
 document.addEventListener("keydown", function(event)

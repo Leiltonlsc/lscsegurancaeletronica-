@@ -103,8 +103,8 @@ document.getElementById("enviar").addEventListener("click", function(event)
 			document.getElementById("erro1").style.color = "red"
 		}
 	}
-	// Formulário: Previne o botão submit de mudar de página se todas opções forem preenchidas, mesmo se estiverem incorretas, sem que remova a caixa de "Preencha os dados". Tive muita luta pra conseguir resolver pois as vezes não funcionava por causa de alguma opção etc... Graças a Deus depois de muitas tentativas, funciona!
-	else if ((document.getElementById("nome").value.length > 0 && document.getElementById("nome").value.length < 4) && (email.endsWith("@gmail.com") || email.endsWith("@yahoo.com") || email.endsWith("@soulasalle.com.br") || email.endsWith("@lasalle.org.br")) && (document.getElementById("telefone").value.length < 11) || (document.getElementById("tipo_servico").value != "TipoServiço"))
+	// Formulário: Previne o botão submit de mudar de página se todas opções forem preenchidas, mesmo se estiverem incorretas, sem que remova a caixa de "Preencha os dados". Tive muita luta pra conseguir resolver pois as vezes não funcionava por causa de alguma opção etc... Graças a Deus depois de muitas tentativas, funciona! ATUALIZAÇÃO: É mais facil que parece mas levou mais tempo que devia...
+	else if (document.getElementById("nome").value.length > 0 && email.length > 0 && document.getElementById("telefone").value.length > 0)
 	{
 		event.preventDefault()
 	}
@@ -113,28 +113,27 @@ document.getElementById("enviar").addEventListener("click", function(event)
 // Mapa: Ao clicar no botão "Acessar via Waze (GPS)", abre um alerta perguntando se o usuário deseja abrir o link, e se clicar OK, abre
 document.getElementById("waze").addEventListener("click", function(event)
 {
-	resposta = window.confirm("Deseja acessar o local via aplicativo Waze (GPS)? Uma nova aba será aberta");
 	
-	if (resposta)
+	if (window.confirm("Deseja acessar o local via aplicativo Waze (GPS)? Uma nova aba será aberta"))
 	{
 		window.open('https://www.waze.com/pt-PT/live-map/meeting?token=15D6-610iazvn7nfmw-sd&locale=pt_BR&env=row&utm_campaign=share_drive&utm_source=waze_app&utm_medium=undefined', '_blank')
 	}
 })
 
-// Navegação: Scroll suave
-
+// Navegação: Scroll suave para "parte da página"
 document.querySelector("nav").addEventListener("click", function(event) 
 {
-    event.preventDefault();
+    event.preventDefault()
 
     if (event.target.tagName === 'A') 
 	{
-		href = event.target.getAttribute('href');
-		pagina = document.querySelector(href);
+        href = event.target.getAttribute('href')
+        pagina = document.querySelector(href)
         
         if (pagina) 
 		{
-            pagina.scrollIntoView({
+            pagina.scrollIntoView
+			({
                 behavior: 'smooth'
             })
         }

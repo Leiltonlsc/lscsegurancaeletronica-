@@ -383,7 +383,6 @@ section {
 
 
 
-/*******************************//* Ajustes para telas médias (tablets) */
 @media (max-width: 768px) {
   nav a {
       padding: 10px;
@@ -391,11 +390,11 @@ section {
   }
 
   .container, .mapaeformulario {
-      grid-template-columns: 1fr; /* Coluna única em tablets */
+      grid-template-columns: 1fr;
   }
 
   .carousel-container, .grid-servicos, .grid-depoimento {
-      grid-template-columns: 1fr; /* Ajuste de colunas para tablets */
+      grid-template-columns: 1fr; 
   }
 
   .servico-item img, .cliente img {
@@ -404,7 +403,7 @@ section {
   }
 }
 
-/* Ajustes para telas pequenas (smartphones) */
+
 @media (max-width: 480px) {
   nav {
       display: flex;
@@ -422,7 +421,7 @@ section {
   }
 
   .grid-servicos, .grid-depoimento {
-      grid-template-columns: 1fr; /* Coluna única em dispositivos móveis */
+      grid-template-columns: 1fr;
   }
 
   .servico-item, .cliente {
@@ -440,3 +439,17 @@ section {
   }
 }
 
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        background-color: #5F5F5F;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+        background-color: #5F5F5F;
+        line-height: 1.5;
+    }
+}
